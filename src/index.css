@@ -10,3 +10,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  padding: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}
+
+.someButtons {
+  width: 75%;
+}
+
+.otherButtons {
+  width: 25%;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 48px;
+  color: white;
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+}
+
+.specials {
+}
+
+.number-button {
+  background-color: #194279;
+  margin: 7px 16px;
+}
+
+.operator-button {
+  background-color: #237293;
+  margin: 7px 0;
+}
+
+.special-button {
+  background-color: #215C9E;
+  margin: 7px 16px;
+}
+
+.zero-button {
+  width: 225px;
+  border-radius: 50%;
+}
