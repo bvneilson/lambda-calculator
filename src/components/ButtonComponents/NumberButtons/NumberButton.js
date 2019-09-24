@@ -1,5 +1,4 @@
 import React from "react";
-import helloWorld from "../../../App"
 
 const NumberButton = props => {
 

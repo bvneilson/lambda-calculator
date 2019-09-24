@@ -15,11 +15,12 @@ const Numbers = props => {
   function changeNum (event) {
     const targetClass = event.target.className;
 
-    if (targetClass === "button number-button") {
-      props.setDisplayNum(event.target.innerHTML)
+    if (props.displayNum === 0) {
+      props.setDisplayNum(`${event.target.innerHTML}`)
     } else {
-      props.setDisplayNum(0);
+      props.setDisplayNum(`${props.displayNum}${event.target.innerHTML}`)
     }
+
   }
   return (
     <div className='numbers'>
@@ -28,13 +29,9 @@ const Numbers = props => {
        it any props needed by the child component*/
        numberState.map(function (number, index) {
          if (number === "0") {
-           return <NumberButton className='button number-button zero-button' key={index} number={parseInt(number)} onClick={changeNum} />
+           return <NumberButton className='button number-button zero-button' key={index} number={number} onClick={changeNum} />
          } else {
-           if (number !== ".") {
-             return <NumberButton className='button number-button' key={index} number={parseInt(number)} onClick={changeNum} />
-           } else {
-             return <NumberButton className='button number-button' key={index} number={number} onClick={changeNum} />
-           }
+            return <NumberButton className='button number-button' key={index} number={number} onClick={changeNum} />
          }
        })
      }
