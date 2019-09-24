@@ -1,10 +1,7 @@
 import React, {useState} from "react";
 
-const Display = () => {
-
-  const [outputNum, setOutputNum] = useState(0);
-  
-  return <div className="display">{outputNum}</div>;
+const Display = props => {
+  return <div className="display">{props.displayNum}</div>;
 };
 
 export default Display;

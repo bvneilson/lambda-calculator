@@ -9,14 +9,16 @@ import { numbers } from '../../../data'
 */
 //Import your array data to from the provided data file
 
-const Numbers = () => {
+const Numbers = props => {
   // STEP 2 - add the imported data to state
   const [numberState, setNumberState] = useState(numbers);
-  function updateDisplay (event) {
+  function changeNum (event) {
     const targetClass = event.target.className;
 
-    if (targetClass === "1") {
-      alert('Hey this works');
+    if (targetClass === "button number-button") {
+      props.setDisplayNum(event.target.innerHTML)
+    } else {
+      props.setDisplayNum(0);
     }
   }
   return (
@@ -26,9 +28,13 @@ const Numbers = () => {
        it any props needed by the child component*/
        numberState.map(function (number, index) {
          if (number === "0") {
-           return <NumberButton className='button number-button zero-button' key={index} number={number} />
+           return <NumberButton className='button number-button zero-button' key={index} number={parseInt(number)} onClick={changeNum} />
          } else {
-           return <NumberButton className='button number-button' key={index} number={number} />
+           if (number !== ".") {
+             return <NumberButton className='button number-button' key={index} number={parseInt(number)} onClick={changeNum} />
+           } else {
+             return <NumberButton className='button number-button' key={index} number={number} onClick={changeNum} />
+           }
          }
        })
      }
