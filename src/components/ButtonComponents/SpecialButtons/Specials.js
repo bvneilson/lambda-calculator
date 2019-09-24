@@ -15,6 +15,7 @@ const Specials = props => {
 
     if (special === 'C') {
       props.setDisplayNum(0);
+      props.setEquationRun(false);
     }
   }
 

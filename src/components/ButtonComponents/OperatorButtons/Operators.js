@@ -14,8 +14,10 @@ const Operators = props => {
     const operator = event.target.innerHTML;
     if (operator === '=') {
       props.setDisplayNum(eval(props.displayNum));
+      props.setEquationRun(true);
     } else {
       props.setDisplayNum(`${props.displayNum} ${operator} `)
+      props.setEquationRun(false);
     }
   }
   return (

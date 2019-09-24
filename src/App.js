@@ -19,6 +19,7 @@ function App() {
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
   const [displayNum, setDisplayNum] = useState(0);
+  const [equationRun, setEquationRun] = useState(false);
 
   return (
     <div className="container">
@@ -29,10 +30,10 @@ function App() {
         <div className="buttons">
           <div className="someButtons">
             <Specials displayNum={displayNum} setDisplayNum={setDisplayNum} />
-            <Numbers displayNum={displayNum} setDisplayNum={setDisplayNum} />
+            <Numbers displayNum={displayNum} setDisplayNum={setDisplayNum} equationRun={equationRun} setEquationRun={setEquationRun} />
           </div>
           <div className="otherButtons">
-            <Operators displayNum={displayNum} setDisplayNum={setDisplayNum} />
+            <Operators displayNum={displayNum} setDisplayNum={setDisplayNum} equationRun={equationRun} setEquationRun={setEquationRun} />
           </div>
         </div>
       </div>

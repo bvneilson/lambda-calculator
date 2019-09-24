@@ -15,10 +15,14 @@ const Numbers = props => {
   function changeNum (event) {
     const targetClass = event.target.className;
 
-    if (props.displayNum === 0) {
-      props.setDisplayNum(`${event.target.innerHTML}`)
+    if (props.equationRun) {
+      props.setDisplayNum(eval(`${props.displayNum}+${event.target.innerHTML}`));
     } else {
-      props.setDisplayNum(`${props.displayNum}${event.target.innerHTML}`)
+      if (props.displayNum === 0) {
+        props.setDisplayNum(`${event.target.innerHTML}`)
+      } else {
+        props.setDisplayNum(`${props.displayNum}${event.target.innerHTML}`)
+      }
     }
 
   }
