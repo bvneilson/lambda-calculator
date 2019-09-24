@@ -29,7 +29,7 @@ function App() {
         <Display displayNum={displayNum} />
         <div className="buttons">
           <div className="someButtons">
-            <Specials displayNum={displayNum} setDisplayNum={setDisplayNum} />
+            <Specials displayNum={displayNum} setDisplayNum={setDisplayNum} setEquationRun={setEquationRun} />
             <Numbers displayNum={displayNum} setDisplayNum={setDisplayNum} equationRun={equationRun} setEquationRun={setEquationRun} />
           </div>
           <div className="otherButtons">
